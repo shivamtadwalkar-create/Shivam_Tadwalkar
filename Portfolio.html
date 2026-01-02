@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVAM TADWALKAR | ST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CORE VARIABLES --- */
+        :root {
+            --neon: #ccff00;       /* Lando Neon */
+            --black: #050505;
+            --dark-grey: #1a1a1a;
+            --white: #ffffff;
+            --font-head: 'Anton', sans-serif;
+            --font-tech: 'Space Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: var(--font-tech);
+            overflow-x: hidden; 
+        }
+
+        a { text-decoration: none; color: inherit; cursor: pointer; transition: 0.3s; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo { font-family: var(--font-head); font-size: 2.5rem; letter-spacing: 1px; line-height: 1; }
+        
+        .nav-btn {
+            border: 1px solid var(--white);
+            padding: 8px 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        .nav-btn:hover { background: var(--neon); color: var(--black); border-color: var(--neon); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5vw;
+            position: relative;
+            /* ROBOT BACKGROUND - Replace with your transparent robot image if available */
+            background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.85) 50%, rgba(5,5,5,0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .hero h1 {
+            font-family: var(--font-head);
+            font-size: 11vw;
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .outline-text {
+            -webkit-text-stroke: 2px var(--white);
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            color: var(--neon);
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--neon);
+            padding-left: 20px;
+        }
+
+        /* --- SCROLLING MARQUEE --- */
+        .marquee-container {
+            background: var(--neon);
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transform: rotate(-1deg) scale(1.02);
+            border-top: 2px solid var(--white);
+            border-bottom: 2px solid var(--white);
+            margin: 0 0 60px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+            font-family: var(--font-head);
+            font-size: 2.5rem;
+            color: var(--black);
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- SKILLS SECTION --- */
+        .skills-section {
+            padding: 0 5vw 80px 5vw;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            border-top: 1px solid #333;
+            padding-top: 40px;
+        }
+
+        .skill-category h3 {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            color: var(--neon);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .skill-list li {
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border-left: 1px solid #333;
+            padding-left: 10px;
+            color: #ccc;
+        }
+
+        .skill-list li:hover {
+            color: var(--white);
+            border-left-color: var(--neon);
+        }
+
+        /* --- PROJECT GRID --- */
+        .section-container { padding: 80px 5vw; }
+        
+        .section-title {
+            font-family: var(--font-head);
+            font-size: 4rem;
+            margin-bottom: 50px;
+            color: var(--white);
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            position: relative;
+            background: #111;
+            height: 450px;
+            border: 1px solid #333;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            transition: border-color 0.3s;
+        }
+
+        .card:hover { border-color: var(--neon); }
+
+        .card-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .card:hover .card-bg {
+            transform: scale(1.1);
+            opacity: 0.3;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 90%;
+            background: linear-gradient(to top, rgba(0,0,0,1), transparent);
+            z-index: 1;
+        }
+
+        .card-content { position: relative; z-index: 2; }
+
+        .project-tag {
+            color: var(--neon);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .card h3 {
+            font-family: var(--font-head);
+            font-size: 2.2rem;
+            line-height: 1;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #ddd;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .stat-badge {
+            display: inline-block;
+            border: 1px solid var(--neon);
+            color: var(--neon);
+            padding: 5px 10px;
+            font-size: 0.75rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Responsive Columns */
+        .col-8 { grid-column: span 8; }
+        .col-4 { grid-column: span 4; }
+        .col-6 { grid-column: span 6; }
+
+        @media (max-width: 900px) {
+            .col-8, .col-4, .col-6 { grid-column: span 12; }
+            .hero h1 { font-size: 16vw; }
+            .section-title { font-size: 3rem; }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--neon);
+            color: var(--black);
+            padding: 80px 5vw;
+            margin-top: 50px;
+        }
+        
+        .footer-cta { font-family: var(--font-head); font-size: 3rem; margin-bottom: 20px; }
+        .footer-links a { font-size: 2rem; margin-right: 20px; color: var(--black); border: 2px solid var(--black); padding: 10px; border-radius: 50%; width: 50px; height: 50px; display: inline-flex; align-items: center; justify-content: center; }
+        .footer-links a:hover { background: var(--black); color: var(--neon); }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ST</div>
+        <a href="mailto:shivamtadwalkar@tamu.edu" class="nav-btn">Contact</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p>Robotics // Dynamics // FEA // Design</p>
+            <h1>Shivam<br><span class="outline-text">Tadwalkar</span></h1>
+            
+            <div style="display: flex; gap: 40px; margin-top: 40px; flex-wrap: wrap;">
+                <div>
+                    <div style="font-family: var(--font-head); font-size: 2rem; color: var(--neon);">01</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase;">Global Rank (SAE)</div>
+                </div>
+                <div>
+                    <div style="font-family: var(--font-head); font-size: 2rem; color: var(--neon);">3.33</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase;">GPA (Graduate)</div>
+                </div>
+                 <div>
+                    <div style="font-family: var(--font-head); font-size: 2rem; color: var(--neon);">M.S.</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase;">Texas A&M Univ.</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            // UAV DESIGN /// GLOBAL RANK 1 /// MATLAB /// ANSYS FLUENT /// DYNAMICS /// ROBOTICS /// FEA ANALYSIS /// RAPID PROTOTYPING /// UAV DESIGN /// GLOBAL RANK 1 /// MATLAB /// ANSYS FLUENT ///
+        </div>
+    </div>
+
+    <section class="skills-section">
+        <div class="section-title" style="font-size: 2.5rem;">TECHNICAL <span style="color:var(--neon); margin-left: 15px;">ARSENAL</span></div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Software</h3>
+                <ul class="skill-list">
+                    <li>MATLAB & Simulink</li>
+                    <li>Python</li>
+                    <li>ANSYS (Fluent, Mechanical)</li>
+                    <li>SolidWorks & Catia V5</li>
+                    <li>Autodesk Inventor</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Engineering</h3>
+                <ul class="skill-list">
+                    <li>Finite Element Analysis (FEA)</li>
+                    <li>Computational Fluid Dynamics (CFD)</li>
+                    <li>GD&T (±5 µm Precision)</li>
+                    <li>Rapid Prototyping (SLS/FDM)</li>
+                    <li>UAV Piloting & Mission Planning</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Certifications</h3>
+                <ul class="skill-list">
+                    <li>CSWP (Dassault Systèmes)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="section-title">PROJECT <span style="color:var(--neon); margin-left: 15px;">DATA</span></div>
+        
+        <div class="grid">
+            
+            <div class="card col-8">
+                <div class="card-bg" style="background-image: url('https://www.robotics247.com/images/legacy_images/formant_quadruped_robots0522.jpg');"></div>
+                <div class="card-content">
+                    <div class="project-tag">SAGAR DEFENCE ENGINEERING</div>
+                    <h3>Quadruped & Biped Robots</h3>
+                    <p>Assisted in design of legged robots. Validated treadmill structure via FEA. Developed UAV joystick improving operator accuracy by 30%.</p>
+                    <div class="stat-badge">COST REDUCED: 25%</div>
+                </div>
+            </div>
+
+            <div class="card col-4">
+                <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000');"></div>
+                <div class="card-content">
+                    <div class="project-tag">ACCURATE ENGINEERING</div>
+                    <h3>Pneumatic Gauging</h3>
+                    <p>Designed air plug/ring gauges for automotive components (connecting rods, brake discs). Applied GD&T principles.</p>
+                    <div class="stat-badge">ACCURACY: +15%</div>
+                </div>
+            </div>
+
+            <div class="card col-4">
+                <div class="card-bg" style="background-image: url('https://www.pretechnologies.com/images/Heat-exchanger-CFD-thermal-analysis.jpg');"></div>
+                <div class="card-content">
+                    <div class="project-tag">IDAC INDIA</div>
+                    <h3>Heat Exchanger FEA</h3>
+                    <p>Achieved 18% weight reduction in base-frames through iterative structural analysis using ANSYS & SolidWorks.</p>
+                    <div class="stat-badge">WEIGHT CUT: 61 KG</div>
+                </div>
+            </div>
+
+            <div class="card col-8">
+                <div class="card-bg" style="background-image: url('https://img.yfisher.com/m30548/1746695057776-6/jpg100-t3-scale100.webp');"></div>
+                <div class="card-content">
+                    <div class="project-tag">FLIGEN SYSTEMS</div>
+                    <h3>Pipeline Surveillance UAV</h3>
+                    <p>Integrated IR/Thermal cameras into VTOL UAVs. Conducted theft detection missions over 100km of pipeline infrastructure.</p>
+                    <div class="stat-badge">RANGE: 100 KM</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="section-title">ACADEMIC <span style="color:var(--neon); margin-left: 15px;">PROJECTS</span></div>
+        
+        <div class="grid">
+
+            <div class="card col-6">
+                <div class="card-bg" style="background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/20d664204147085.Y3JvcCwzMjYwLDI1NTAsMTYsMA.jpg');"></div>
+                <div class="card-content">
+                    <div class="project-tag">SAE INTERNATIONAL (USA)</div>
+                    <h3>Wildfire Solution UAV</h3>
+                    <p>Designed autonomous UAV for fire suppression with thermal imaging. Performed stress analysis (MATLAB/FEA) on payload mechanisms.</p>
+                    <div class="stat-badge">GLOBAL RANK 1: DESIGN</div>
+                </div>
+            </div>
+
+            <div class="card col-6">
+                <div class="card-bg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2wfVEYYHBjWHumPBt0M_KX-bvGVXY5755DQ&s');"></div>
+                <div class="card-content">
+                    <div class="project-tag">SAE INDIA</div>
+                    <h3>Reforestation UAV</h3>
+                    <p>Built fixed-wing UAV (1.2m wingspan) for aerial seed dispersal. Engineered payload bay for 1kg delivery under dynamic loads.</p>
+                    <div class="stat-badge">ALL INDIA RANK 2</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-cta">READY TO COLLABORATE?</div>
+        <div style="font-family: var(--font-head); font-size: 5vw; line-height: 0.9; margin-bottom: 30px;">
+            SHIVAM<br>TADWALKAR
+        </div>
+        
+        <div class="footer-links">
+            <a href="https://linkedin.com/in/shivam-tadwalkar" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:shivamtadwalkar@tamu.edu"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+        
+        <div style="margin-top: 50px; opacity: 0.8; font-size: 0.8rem; font-weight: bold; border-top: 2px solid var(--black); padding-top: 20px;">
+            © 2026 SHIVAM TADWALKAR. College Station, TX.
+        </div>
+    </footer>
+
+</body>
+</html>
