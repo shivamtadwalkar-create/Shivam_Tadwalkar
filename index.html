@@ -66,7 +66,6 @@
             justify-content: center;
             padding: 0 5vw;
             position: relative;
-            /* ROBOT BACKGROUND - Replace with your transparent robot image if available */
             background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover;
             background-position: center;
@@ -265,12 +264,13 @@
         }
 
         /* Responsive Columns */
+        .col-12 { grid-column: span 12; }
         .col-8 { grid-column: span 8; }
         .col-4 { grid-column: span 4; }
         .col-6 { grid-column: span 6; }
 
         @media (max-width: 900px) {
-            .col-8, .col-4, .col-6 { grid-column: span 12; }
+            .col-12, .col-8, .col-4, .col-6 { grid-column: span 12; }
             .hero h1 { font-size: 16vw; }
             .section-title { font-size: 3rem; }
         }
@@ -350,7 +350,10 @@
             <div class="skill-category">
                 <h3>Certifications</h3>
                 <ul class="skill-list">
-                    <li>CSWP (Dassault Systèmes)</li>
+                    <li>Certified SOLIDWORKS Associate (CSWA) - Mechanical Design</li>
+                    <li>Certified SOLIDWORKS Professional (CSWP) - Mechanical Design</li>
+                    <li>CSWA - Additive Manufacturing</li>
+                    <li>CSWA - Sustainable Design</li>
                 </ul>
             </div>
         </div>
@@ -362,12 +365,21 @@
         <div class="grid">
             
             <div class="card col-8">
-                <div class="card-bg" style="background-image: url('https://www.robotics247.com/images/legacy_images/formant_quadruped_robots0522.jpg');"></div>
+                <div class="card-bg" style="background-image: url('https://pbs.twimg.com/media/E_TIVYEUUAIAWtJ?format=jpg&name=large');"></div>
                 <div class="card-content">
                     <div class="project-tag">SAGAR DEFENCE ENGINEERING</div>
-                    <h3>Quadruped & Biped Robots</h3>
-                    <p>Assisted in design of legged robots. Validated treadmill structure via FEA. Developed UAV joystick improving operator accuracy by 30%.</p>
-                    <div class="stat-badge">COST REDUCED: 25%</div>
+                    <h3>Stealth & High-Altitude UAVs</h3>
+                    <p>Developed autonomous stealth UAVs for Indian Army & Navy. Designed systems for high-altitude operations with stealth capability and stability.</p>
+                    <div class="stat-badge">DEFENCE R&D</div>
+                </div>
+            </div>
+
+            <div class="card col-4">
+                <div class="card-bg" style="background-image: url('https://www.robotics247.com/images/legacy_images/HumanoidHMND-01-Alpha-Bipedal-robot-Robotics247-2025.jpg');"></div>
+                <div class="card-content">
+                    <div class="project-tag">SAGAR DEFENCE ENGINEERING</div>
+                    <h3>Robotics R&D</h3>
+                    <p>Designed Quadruped/Biped robots. Validated treadmill structures via FEA. 25% cost reduction via SLS 3D printing.</p>
                 </div>
             </div>
 
@@ -391,11 +403,11 @@
                 </div>
             </div>
 
-            <div class="card col-8">
+            <div class="card col-4">
                 <div class="card-bg" style="background-image: url('https://img.yfisher.com/m30548/1746695057776-6/jpg100-t3-scale100.webp');"></div>
                 <div class="card-content">
                     <div class="project-tag">FLIGEN SYSTEMS</div>
-                    <h3>Pipeline Surveillance UAV</h3>
+                    <h3>Pipeline Surveillance</h3>
                     <p>Integrated IR/Thermal cameras into VTOL UAVs. Conducted theft detection missions over 100km of pipeline infrastructure.</p>
                     <div class="stat-badge">RANGE: 100 KM</div>
                 </div>
@@ -408,6 +420,26 @@
         <div class="section-title">ACADEMIC <span style="color:var(--neon); margin-left: 15px;">PROJECTS</span></div>
         
         <div class="grid">
+
+            <div class="card col-12">
+                <div class="card-bg" style="background-image: url('https://en.robotis.com/data/item/explain/1893207946_007c1f99_1893207946_f578f3d0_gallery5.png');"></div>
+                <div class="card-content">
+                    <div class="project-tag">TEXAS A&M UNIVERSITY (MEEN 612)</div>
+                    <h3>UR3e End-Effector Design</h3>
+                    <p>Designed and fabricated a custom end-effector for the UR3e collaborative robot. Programmed kinematics and trajectory planning for autonomous pick-and-place operations.</p>
+                    <div class="stat-badge">GRADUATE ROBOTICS</div>
+                </div>
+            </div>
+
+            <div class="card col-12">
+                <div class="card-bg" style="background-image: url('https://playworld.com/wp-content/uploads/2023/09/350-hoopla-web-image-1.png');"></div>
+                <div class="card-content">
+                    <div class="project-tag">TEXAS A&M UNIVERSITY (MEEN 632)</div>
+                    <h3>Park Equipment Design</h3>
+                    <p>Designed a unique, low-cost Swing for public parks. Utilized creative geometry to maximize strength while minimizing material costs.</p>
+                    <div class="stat-badge">CREATIVE DESIGN</div>
+                </div>
+            </div>
 
             <div class="card col-6">
                 <div class="card-bg" style="background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/20d664204147085.Y3JvcCwzMjYwLDI1NTAsMTYsMA.jpg');"></div>
@@ -450,4 +482,3 @@
 
 </body>
 </html>
-
